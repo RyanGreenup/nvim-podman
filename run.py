@@ -54,6 +54,7 @@ def run(engine: str, config: str, shell: bool):
     opt = ["-it"]
     opt += ["--rm"]
     opt += ["--userns=keep-id"]
+    opt += ["--security-opt", "label=type:container_runtime_t"]
     opt += vol(HOME, HOME)
     opt += vol(conf_dir, f"{HOME}/.config/nvim")
     opt += vol(local_dir, f"{HOME}/.local/share/nvim")
